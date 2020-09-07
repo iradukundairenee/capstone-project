@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <title>responsive design</title>
+        <link type="text/css" rel="stylesheet" href="css/style1.css">
+      
+    </head>
+    <style>
+        table{
+            margin-left:35px;
+        }
+        table tr td{
+            overflow:auto;
+        }
+        .insert{
+
+            margin-left: 40%;
+          height:300px;
+          width:300px; 
+          margin-top:150px;
+        }
+        .file{
+            width:100px;
+        }
+         .text{
+            height: 100px;
+            width:300px;
+            background-color:darkgrey;
+         }
+         .submit{
+            width:300px;
+            background-color: lightslategray;
+            height: 30px;
+            color: white;
+         }
+         .art_title{
+            background-color: darkgrey; 
+            width:300px;
+            height: 30px;
+
+         }
+
+        @media screen and (max-width:620px){
+            table{
+                overflow-x:auto;
+            }
+            .here{
+                float: left;
+            }
+        }
+    </style>
+    
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <p id="btn">menu</p>
+                <p id="cancel">close</p>
+            </label>
+            <img src="images/logo.png">
+            <body>   
+   <ul>
+    <li><a href="index1.html">home</a></li>
+    <li><a href="contact1.html">contact</a></li>
+    <li><a href="blog2.html">blog</a></li>
+    <li><a href="profile1.html">about</a></li>
+    <li><a href="logout.html">logout</a></li>
+</ul>
+        </nav>
+<center >
+<table id="container">
+   <tr>
+       <th>UPLOADED IMAGE</th>
+       <th>ARTICAL</th>
+       <th>DELETE</th>
+       <th >UPDATE</th>
+   </tr> 
+</table>
+</center>
+<div class="insert">
+    <h2>INSERT HERE</h2></br></br>
+    <div class="here">
+<form id="form">
+<input class="file" type="file"  id="images"></br></br>
+<input  class="art_title" type="text"  id="art_title" placeholder="article title here">
+<input  class="text" type="text" id="article" placeholder="article here">
+        </form>
+</div>
+<div>
+    <input class="submit" type="submit" name="submit" onclick="submit()" style= "background-color: blue;">
+   </div>  
+</div>
+<div class="footer">
+    &nbsp;
+    &nbsp;
+    &nbsp;
+   <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
+    authDomain: "capstone-project-c3976.firebaseapp.com",
+    databaseURL: "https://capstone-project-c3976.firebaseio.com",
+    projectId: "capstone-project-c3976",
+    storageBucket: "capstone-project-c3976.appspot.com",
+    messagingSenderId: "59674241183",
+    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
+    measurementId: "G-BY2DBWKZV3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const db=firebase.firestore();
+
+  firebase.analytics();
+</script>
+<script src="js/auth3.js"></script>
+<script>
+      var blog_id=window.location.hash.replace("#","");  
+    
+       var content=document.querySelector('#container');
+    db.collection('a_insert').get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+  content.innerHTML+=`
+   <tr>
+    <td><img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;"></td>
+    <td style="height:200px; width:250px;"><H2${doc.data().art_title}</H2>.
+        ${doc.data().art_title}</td>
+          <td style="height:100px; width:100px; overflow: auto;"></br>
+            </td>
+            
+            <td><a href="#" style="color: white;" onClick="delete()">delete</a></td>
+        
+             <td><a href="#" style="color: white;">update</a></td>
+   </tr>
+   <tr>
+    <td><img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;"></td>
+    <td style="height:200px; width:250px;"><h2> Artical title.</h2>
+        ${doc.data().article} 
+        </td>
+            </td>
+            
+             <td><a href="#" style="color: white;">update</a></td>
+   </tr>
+`;
+
+})
+
+})
+</script>
+<script>
+         var blog_id=window.location.hash.replace("#","");  
+    
+    var content=document.querySelector('#container');
+ db.collection('a_insert').delete().then((snapshot) => {
+snapshot.docs.forEach(doc => {
+content.innerHTML+=`
+<tr>
+ <td><img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;"></td>
+ <td style="height:200px; width:250px;"><H2${doc.data().art_title}</H2>.
+     ${doc.data().art_title}</td>
+       <td style="height:100px; width:100px; overflow: auto;"></br>
+         </td>
+         db.collection('a_insert').doc(blog_id).delete().then((snapshot) => {
+         <td><a href="#" style="color: white;" onClick="delete()">delete</a></td>
+     })
+          <td><a href="#" style="color: white;">update</a></td>
+</tr>
+<tr>
+ <td><img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;"></td>
+ <td style="height:200px; width:250px;"><h2> Artical title.</h2>
+     ${doc.data().article} 
+     </td>
+         </td>
+         
+          <td><a href="#" style="color: white;">update</a></td>
+</tr>
+`;
+
+})
+
+})
+
+    </script>
+
+   </div>
+    </body>
+    </html>
