@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>responsive design</title>
+        <link type="text/css" rel="stylesheet" href="css/style1.css">
+        <script>
+            
+        </script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <style>
+
+    </style>
+    
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
+            <img src="images/logo.png">
+            <body>   
+   <ul>
+    <li><a href="index1.html">home</a></li>
+    <li><a href="contact1.html">contact</a></li>
+    <li><a href="blog2.html">blog</a></li>
+    <li><a href="profile1.html">profile </a></li>
+    <li><a href="logout.html">logout</a></li>
+</ul>
+        </nav>
+        <center>
+          <h2 style="color: white;">Contact messages</h2>
+          &nbsp;
+          &nbsp;
+            <div style="height: 450px; width: 500px; margin-top:10px; background-color: darkgreen; overflow:auto; color:white;" id="container">
+              
+
+               
+            </div>
+          </center>
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
+    authDomain: "capstone-project-c3976.firebaseapp.com",
+    databaseURL: "https://capstone-project-c3976.firebaseio.com",
+    projectId: "capstone-project-c3976",
+    storageBucket: "capstone-project-c3976.appspot.com",
+    messagingSenderId: "59674241183",
+    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
+    measurementId: "G-BY2DBWKZV3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const db=firebase.firestore();
+
+  firebase.analytics();
+</script>
+<script>
+      var content=document.querySelector('#container');
+    db.collection('contact').get().then((snapshot) => {
+
+snapshot.docs.forEach(doc => {
+content.innerHTML+=` &nbsp;
+          &nbsp; &nbsp;<h3 style="color:white;">${doc.data().fullnames}</h3>
+<b>${doc.data().email}</b>
+<p>${doc.data().message}</p>
+`;
+})
+
+})
+</script>
+
+
+        <div class="footer">
+            &nbsp;
+            &nbsp;
+            &nbsp;
+           <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
+        </div>
+        </body>
+        </html>
