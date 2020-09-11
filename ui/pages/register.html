@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title></title>
+        <link type="text/css" rel="stylesheet" href="css/style1.css">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+     
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    </head>
+    <style>
+        #register{
+            background-color: blue; 
+            color:white;
+            border-radius: 10px;
+        }
+        .regititle{
+            color: white;
+             margin-left: 30%; 
+             font-size:28px;
+
+        }
+        #error_msg {
+            color:red;
+            margin-left: 32%;
+            font-size:23px;  
+        }
+    </style>
+    
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
+            <img src="images/logo.png">
+            <body>   
+   <ul>
+    <li><a href="../index.html">home</a></li>
+    <li><a href="contact.html">contact</a></li>
+    <li><a href="blog.html">blog</a></li>
+    <li><a href="profile.html">about</a></li>
+    <li><a href="signin.html">signin</a></li>
+</ul>
+        </nav>
+       
+        <div class="register">
+            <div class="regititle">Register</div>
+            <form id="signup-form"> 
+       <input type="email" id="signup-email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" title="enter email format" placeholder="Enter your email" required="">
+       <center><div id="answer" style="color:red"></div></center>
+       <input type="password" id="signup-password" placeholder="Enter passwrod" required="">
+       <center><div id="answer1" style="color:red"></div></center>
+       <input type="submit" id="register" name="submit"  onclick="validate()"  value="REGISTER">
+       <form>
+       <div id="error_msg"></div>
+        </div>
+ 
+        <div class="footer">
+            &nbsp;
+            &nbsp;
+            &nbsp;
+           <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
+        </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
+    authDomain: "capstone-project-c3976.firebaseapp.com",
+    databaseURL: "https://capstone-project-c3976.firebaseio.com",
+    projectId: "capstone-project-c3976",
+    storageBucket: "capstone-project-c3976.appspot.com",
+    messagingSenderId: "59674241183",
+    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
+    measurementId: "G-BY2DBWKZV3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const auth=firebase.auth();
+
+  const db=firebase.firestore();
+
+  firebase.analytics();
+</script>
+<script src="js/auth.js"></script>
+<script>
+    function validate(){
+var username = document.getElementById("signup-email").value;
+var password = document.getElementById("signup-password").value;
+var answer =document.getElementById("answer");
+var answer1 =document.getElementById("answer1");
+
+if ( username == "" ){
+answer.innerHTML="please register your email your email";
+//window.location = "success.html"; // Redirecting to other page.
+
+}
+
+
+if(password == ""){
+    answer1.innerHTML="please register your   password";
+    //window.location = "success.html"; // Redirecting to other page.
+    
+    }
+    if(password.length <=6){
+        answer1.innerHTML="your password is too short";
+
+    }
+    }
+</script>
+    </body>
+</html>

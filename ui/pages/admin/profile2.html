@@ -1,0 +1,224 @@
+<html>
+    <head>
+        <title>responsive design</title>
+        <link type="text/css" rel="stylesheet" href="css/style1.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <style>
+        .flex-profile{
+    display: flex;
+    flex-wrap:nowrap;
+
+}
+.flex-profile > div{
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    text-align: center;
+    margin-left: 250px;
+}
+.flex-profile h2,.flex-profile span{
+    color: white;
+}
+.flex-profile pan{
+    color:white;
+    font-size:20px ;
+}
+.flex-profile > p{
+    text-align: center;
+    margin-left: 250px;
+    color:white;
+
+}
+.row{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          flex-flow: wrap;
+      }
+      .card{
+          width:30%;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          margin-bottom: 50px;
+          transition: 0.3s;
+      }
+      .card-header{
+          color: white;
+          background-color: #34495e;
+          text-align: center;
+          padding: 30px 10px;
+      }
+      .card-body{
+          padding:30px 20px;
+          text-align: center;
+          font-size: 18px;
+      }
+
+.skills{
+    height: 400px;
+    clear:both;
+}
+.flex-skills{
+    display: flex;
+    flex-wrap:nowrap;
+
+}
+.flex-skills > div{
+    width: 800px;
+    height: 250px;
+    margin: 10px;
+    text-align: center;
+    margin-left: 250px;
+    margin-top:100px;
+}
+.card-body{
+    color:white;
+}
+.skills2{
+    color:white;
+     margin-top: 70px;
+      margin-left: 10%;
+      font-size:15px;
+}
+.skillstitle{
+     color: white;
+     margin-left: 270px; 
+     font-size:25px;
+}
+ 
+@media screen and (max-width:1000px){
+          .card{
+              width:40%;
+          }       
+      }
+      @media screen and (max-width:620px){
+          .container{
+              width:100%;
+          }
+          .heading{
+              padding:20px;
+              font-size:20px;
+          }
+          .card{
+              width:70%;
+          } 
+          .card-body{
+    color:white;
+}
+.skills2{
+    color:white;
+     margin-top: 70px;
+      margin-left: 5%;
+      font-size:15px;
+
+}
+.skillstitle{
+     color: white;
+     margin-left: 170px; 
+     font-size:25px;
+}
+
+}
+
+    </style>
+    
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
+            <img src="images/logo.png">
+            <body>   
+   <ul>
+    <li><a href="home1.html">home</a></li>
+    <li><a href="contact.html">contact</a></li>
+    <li><a href="blog.html">blog</a></li>
+    <li><a href="profile.html">about</a></li>
+    <li><a href="signin.html">signin</a></li>
+</ul>
+        </nav>
+        
+<center id="container">
+   
+  </center>
+              
+  <div class="footer">
+    &nbsp;
+    &nbsp;
+    &nbsp;
+   <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
+</div>
+</body>
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
+    authDomain: "capstone-project-c3976.firebaseapp.com",
+    databaseURL: "https://capstone-project-c3976.firebaseio.com",
+    projectId: "capstone-project-c3976",
+    storageBucket: "capstone-project-c3976.appspot.com",
+    messagingSenderId: "59674241183",
+    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
+    measurementId: "G-BY2DBWKZV3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const db=firebase.firestore();
+
+  firebase.analytics();
+</script>
+
+<script>
+    var blog_id=window.location.hash.replace("#","");
+    
+    db.collection('profile').doc(blog_id).get().then((doc) => {
+
+
+  var container=document.querySelector("#container");
+  container.innerHTML=`
+  <div style="height: 450px; width: 500px; margin-top:10px; background-color: " id="container">
+      <input type="file">   
+      <h2>profile details</h2>
+      <div style="height: 400px; width:300px;">
+      <input type="text" value="${doc.data().profilename}"   id="profilename"    style="height:20px;" placeholder="enter profile name"></br></br>
+      <input type="text" value="${doc.data().description}" id="description"      style="height: 100px;" placeholder= "owner description will be here"></br></br>
+      <input type="submit" name="submit" onclick="updateblog('${doc.id}')"  name="update"> 
+    </div>
+    </div>`;
+
+})
+
+function updateblog(id){
+   
+   db.collection('profile').doc(id).update({
+        
+    description:document.querySelector('#description').value,
+
+    profilename:document.querySelector('#profilename').value,
+        
+}).then(success => {
+    alert('updated');
+    window.location="profile1.html";
+}).catch(err => {
+    alert(err);
+});
+
+
+};
+
+
+</script>

@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>responsive design</title>
+        <link type="text/css" rel="stylesheet" href="css/style1.css">
+    </head>
+    <style>
+        .register1{
+    background-color: #003300;
+    height:350px;
+    width:500px;
+    margin-left: 400px;
+    margin-top: 70px;
+    border-radius: 10px;
+}
+        #login_btn{
+            background-color: blue;
+             color:white; 
+             border-radius: 10px;
+             cursor: pointer;
+
+             
+
+        }
+        #error_msg{
+            color:red;
+            margin-left: 20%;
+            display: none;
+           
+        }
+    </style>
+    
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <p id="btn">menu</p>
+                <p id="cancel">close</p>
+            </label>
+            <img src="images/logo.png">
+            <body>   
+   <ul>
+    <li><a href="../index.html">home</a></li>
+    <li><a href="contact.html">contact</a></li>
+    <li><a href="blog.html">blog</a></li>
+    <li><a href="profile.html">about</a></li>
+    <li><a href="signin.html">signin</a></li>
+</ul>
+        </nav>
+       
+             
+        <div class="register"></br></br></br>
+            <div class="regititle" style="color: white; margin-left: 100px; font-size: 25px;">login HERE</div></br></br></br>
+            
+            <form  id="signup-form">
+       <input type="text" id="signup-email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" title=" please enter email format" class="input" name="name" required="" placeholder="Enter username">
+        <center><div id="answer" style="color:red"></div></center>
+       <input type="password" id="signup-password" class="input" password="password" required="" placeholder="Enter password">
+       <center><div id="answer1" style="color:red"></div></center>
+       <input type="submit" name="submit" id="login_btn"  value="Login" onclick="validate()" >
+       
+       </form>
+       <p style="color: white; margin-left: 30%;">don't you already have an account?</p>
+       <a href="register.html" style="color: white; margin-left: 30%;">  register here</a>
+        </div>
+        <div class="footer">
+            &nbsp;
+            &nbsp;
+            &nbsp;
+           <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
+           <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
+    authDomain: "capstone-project-c3976.firebaseapp.com",
+    databaseURL: "https://capstone-project-c3976.firebaseio.com",
+    projectId: "capstone-project-c3976",
+    storageBucket: "capstone-project-c3976.appspot.com",
+    messagingSenderId: "59674241183",
+    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
+    measurementId: "G-BY2DBWKZV3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const db=firebase.firestore();
+
+  firebase.analytics();
+</script>
+<script src="js/auth1.js"></script>
+<script>
+    function validate(){
+var username = document.getElementById("signup-email").value;
+var password = document.getElementById("signup-password").value;
+var answer =document.getElementById("answer");
+var answer1 =document.getElementById("answer1");
+
+if ( username == "" ){
+answer.innerHTML="please enter your email";
+//window.location = "success.html"; // Redirecting to other page.
+
+}
+
+
+if(password == ""){
+    answer1.innerHTML="please enter this password";
+    //window.location = "success.html"; // Redirecting to other page.
+    
+    }
+    }
+</script>
+        </div>
+        </body>
+        </html>

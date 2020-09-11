@@ -1,0 +1,264 @@
+<html>
+    <head>
+        <title>responsive design</title>
+        <link type="text/css" rel="stylesheet" href="css/style1.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <style>
+      *{
+          margin:0px;
+          padding:0px;
+          box-sizing: border-box;
+         
+      }
+      body{
+          background-color: #fefefe;
+          font-family: sans-serif;
+          background-color: rgb(15, 182, 233);
+      }
+      .container{
+          widith: 90%;
+          margin: 50px auto;
+
+      }
+      .heading{
+          text-align: center;
+          font-size: 30px;
+          margin-bottom: 50px;
+      }
+      .row{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          flex-flow: wrap;
+      }
+      .card{
+          width:20%;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          margin-bottom: 50px;
+          transition: 0.3s;
+      }
+      .card-header{
+          color: white;
+          background-color: #34495e;
+          text-align: center;
+          padding: 30px 10px;
+      }
+      .card-body{
+          padding:30px 20px;
+          text-align: center;
+          font-size: 18px;
+      }
+      .card-body .btn{
+          display: block;
+          color:#fff;
+          text-align: center;
+          background-color: #34495e;
+          margin-top: 30px;
+          text-decoration: none;
+          padding: 10px 5px;
+
+      } 
+      #commentt{
+      float: left;
+      height: 80px;
+      width:228px;
+      }
+      .inputsubmit{
+        float: left;
+        height: 30px;
+      width:230px;
+      background-color: #34495e;
+      color:white;
+      }
+    #commentor{
+        width:225px;
+        height:30px; 
+        background-color:darkgrey;
+
+    }
+      @media screen and (max-width:1000px){
+          .card{
+              width:40%;
+          }   
+          
+          #commentt{
+      float: left;
+      height: 80px;
+      width:210px;
+      }
+      .inputsubmit{
+        float: left;
+        height: 30px;
+        width:216px;
+      background-color: #34495e;
+      color:white;
+      }
+      img{
+        width:216px;
+      }
+        
+      }
+      @media screen and (max-width:620px){
+          .container{
+              width:100%;
+          }
+          .heading{
+              padding:20px;
+              font-size:20px;
+          }
+          .card{
+              width:80%;
+          } 
+          #commentt{
+      float: left;
+      height: 80px;
+      width:345px;
+      }
+      #commentor{
+        float: left;
+      height: 30px;
+      width:345px;   
+      }
+      .inputsubmit{
+        float: left;
+        height: 30px;
+        width:345px;
+      background-color: #34495e;
+      color:white;
+      }
+            
+      }
+  </style>
+    
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
+            <img src="images/logo.png">
+            <body>   
+   <ul>
+    <li><a href="../index.html">home</a></li>
+    <li><a href="contact.html">contact</a></li>
+    <li><a href="blog.html">blog</a></li>
+    <li><a href="profile.html">about</a></li>
+    <li><a href="signin.html">signin</a></li>
+</ul>
+        </nav>
+        
+        <div class="container">
+          <div class="heading">
+          </div>
+          <div class="row">
+              <div class="card">
+                  <div class="card-header" style="color: white;background-color: #34495e;">
+                  <h2>74 Attention-Grabbing Blog Titles That Actually Work
+                </h2>
+                  <img src="images/profile1.jpg"  height="200px" width="250px;">
+                  </div>
+                  <div class="card-body">
+      <p> Lorem ipsum, dolor sit amet consectetur 
+       adipisicing elit. Sequi tempore, recusandae,
+       illum nostrum deleniti eaque culpa provident
+       quibusdam assumenda explicabo officiis repre</p>
+       <a href="blog_open.html" class="btn">readmore</a>
+     
+    </div>
+
+              </div>
+              <div class="card">
+                  <div class="card-header">
+              <h2>Artical title</h2>
+              <img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;">
+                  </div>
+                  <div class="card-body">
+       <p>Lorem ipsum, dolor sit amet consectetur 
+       adipisicing elit. Sequi tempore, recusandae,
+       illum nostrum deleniti eaque culpa provident
+       quibusdam assumenda explicabo officiis repre</p>
+       <a href="#" class="btn">readmore</a>
+      
+      
+                  </div>
+
+              </div>
+
+              <div class="card">
+                  <div class="card-header">
+              <h2>Artical title</h2>
+              <img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;">
+                  </div>
+                  <div class="card-body">
+      <p> Lorem ipsum, dolor sit amet consectetur 
+       adipisicing elit. Sequi tempore, recusandae,
+       illum nostrum deleniti eaque culpa provident
+       quibusdam assumenda explicabo officiis repre</p>
+       <a href="#" class="btn">readmore</a>
+      
+       
+                  </div>
+
+              </div>
+
+              <div class="card">
+                  <div class="card-header">
+              <h2>Artical title</h2>
+              <img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;">
+                  </div>
+                  <div class="card-body">
+       <p>Lorem ipsum, dolor sit amet consectetur 
+       adipisicing elit. Sequi tempore, recusandae,
+       illum nostrum deleniti eaque culpa provident
+       quibusdam assumenda explicabo officiis repre</p>
+       <a href="#" class="btn">readmore</a>    
+                  </div>
+
+              </div>
+
+
+          </div>
+
+      </div>
+
+     
+    <div class="footer">
+        &nbsp;
+        &nbsp;
+        &nbsp;
+       <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
+          <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
+    authDomain: "capstone-project-c3976.firebaseapp.com",
+    databaseURL: "https://capstone-project-c3976.firebaseio.com",
+    projectId: "capstone-project-c3976",
+    storageBucket: "capstone-project-c3976.appspot.com",
+    messagingSenderId: "59674241183",
+    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
+    measurementId: "G-BY2DBWKZV3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const db=firebase.firestore();
+
+  firebase.analytics();
+</script>
+<script src="auth3.js"></script>
+    </div>
+    </body>
+    </html

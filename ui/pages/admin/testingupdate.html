@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <title>responsive design</title>
+        <link type="text/css" rel="stylesheet" href="css/style1.css">
+      
+    </head>
+    <style>
+        table{
+            margin-left:35px;
+        }
+        table tr td{
+            overflow:auto;
+        }
+        .insert{
+
+            margin-left: 40%;
+          height:300px;
+          width:300px; 
+          margin-top:150px;
+        }
+        .file{
+            width:100px;
+        }
+         .text{
+            height: 100px;
+            width:300px;
+            background-color:darkgrey;
+         }
+         .submit{
+            width:300px;
+            background-color: lightslategray;
+            height: 30px;
+            color: white;
+         }
+         .art_title{
+            background-color: darkgrey; 
+            width:300px;
+            height: 30px;
+
+         }
+
+        @media screen and (max-width:620px){
+            table{
+                overflow-x:auto;
+            }
+            .here{
+                float: left;
+            }
+        }
+    </style>
+    
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <p id="btn">menu</p>
+                <p id="cancel">close</p>
+            </label>
+            <img src="images/logo.png">
+            <body>   
+   <ul>
+    <li><a href="index1.html">home</a></li>
+    <li><a href="contact1.html">contact</a></li>
+    <li><a href="blog2.html">blog</a></li>
+    <li><a href="profile1.html">about</a></li>
+    <li><a href="logout.html">logout</a></li>
+</ul>
+        </nav>
+<center  id="container">
+
+</center>
+
+   
+<div class="footer">
+    &nbsp;
+    &nbsp;
+    &nbsp;
+   <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
+    authDomain: "capstone-project-c3976.firebaseapp.com",
+    databaseURL: "https://capstone-project-c3976.firebaseio.com",
+    projectId: "capstone-project-c3976",
+    storageBucket: "capstone-project-c3976.appspot.com",
+    messagingSenderId: "59674241183",
+    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
+    measurementId: "G-BY2DBWKZV3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const db=firebase.firestore();
+
+  firebase.analytics();
+</script>
+<!--<script src="js/auth3.js"></script>-->
+<script>
+     var blog_id=window.location.hash.replace("#","");
+    
+ 
+     db.collection('a_insert').doc(blog_id).get().then((doc) => {
+
+
+   var container=document.querySelector("#container");
+   container.innerHTML=`
+   <h2>update</h2>
+    <input type="text" value="${doc.data().art_title}" id="art_title"  height="10px" width="300px"></br></br>
+    <input type="file" value="${doc.data().images}"    id="images" height="10px" width="300px"></br></br>
+    <input type ="text"  value="${doc.data().article}" id="article" height="10px" width="300px"></br></br>
+    <input  type="submit" name="submit" onclick="updateblog('${doc.id}')" value="update">
+</div>
+      </div>`;
+
+})
+
+function updateblog(id){
+   
+   db.collection('a_insert').doc(id).update({
+        
+art_title:document.querySelector('#art_title').value,
+
+images:document.querySelector('#images').value,
+
+article:document.querySelector('#article').value,
+        
+}).then(success => {
+    alert('updated');
+    window.location="blog2.html";
+}).catch(err => {
+    alert(err);
+});
+
+
+};
+
+</script>
+
+
+   </div>
+    </body>
+    </html>
