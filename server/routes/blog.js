@@ -83,6 +83,23 @@ router.get('/', (req,res,next) => {
     })
    
 })
+
+router.delete('/:blogId', (req,res,next) =>{
+    const id=req.params.blogId;
+    Blog.remove({_id:id})
+    .exec()
+    .then(result => {
+        
+        res.status(200).json(result);
+    })
+    .catch(error => {
+    console.log(error);
+    res.status(500).json({
+        error:error
+    })
+    })
+  
+});
   
 
 export default router
