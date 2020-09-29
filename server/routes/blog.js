@@ -126,6 +126,34 @@ router.get('/', (req,res,next) => {
    
 })
 
+router.patch('/:blogId', (req,res,next) =>{
+    const id=req.params.blogId;
+    const updateOps = {};
+    for ( const ops of Object.entries(req.body)){
+
+        updateOps[ops[0]]=ops[1];
+    }
+    
+    Blog.update({_id: id},{$set : updateOps})
+    .exec()
+    .then(result => {
+  console.log(result);
+  res.status(200).json({message:"blog updated"});
+    })
+    .catch(err =>{
+        console.log(err);
+        res.status(500).json({
+            error:err
+        })
+
+    })
+        });
+
+
+
+         
+
+
 router.delete('/:blogId', (req,res,next) =>{
     const id=req.params.blogId;
     Blog.remove({_id:id})
