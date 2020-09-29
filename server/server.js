@@ -3,11 +3,19 @@ import mongoose from 'mongoose'
 import blogRoutes from './routes/blog'
 import contactRoutes from './routes/contact'
 import userRoutes from './routes/user'
-mongoose.connect('mongodb+srv://node-shop:node-shop@node-shop.satrg.mongodb.net/node-shop?retryWrites=true&w=majority',
+/*mongoose.connect('mongodb+srv://node-shop:node-shop@node-shop.satrg.mongodb.net/node-shop?retryWrites=true&w=majority',
+
+     {useNewUrlParser: true , useUnifiedTopology:true, useCreateIndex: true}
+
+ );*/
+ mongoose.connect('mongodb+srv://node-shop:node-shop@node-shop.satrg.mongodb.net/node-shop?retryWrites=true&w=majority',
 
      {useNewUrlParser: true , useUnifiedTopology:true, useCreateIndex: true}
 
  );
+  
+
+
   
 
 
