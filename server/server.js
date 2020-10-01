@@ -9,11 +9,6 @@ import profileRoutes from './routes/profile'
      {useNewUrlParser: true , useUnifiedTopology:true, useCreateIndex: true}
 
  );
-  
-
-
-  
-
 
 const app = express()
 
