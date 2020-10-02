@@ -141,7 +141,7 @@
             <img src="images/logo.png">
             <body>   
    <ul>
-    <li><a href="home1.html">home</a></li>
+    <li><a href="../index.html">home</a></li>
     <li><a href="contact.html">contact</a></li>
     <li><a href="blog.html">blog</a></li>
     <li><a href="profile.html">about</a></li>
@@ -152,13 +152,65 @@
         <div class="container">
           <div class="heading">
           </div>
-          <div class="row"  id="content">
-         
-        
+          <div class="row">
+              <div class="card">
+                  <div class="card-header" style="color: white;background-color: #34495e;">
+                  <h2> Single Grain
+                </h2>
+                  <img src="images/profile1.jpg"  height="200px" width="250px;">
+                  </div>
+                  <div class="card-body">
+      <p>As a successful digital marketing company,
+           Single Grain knows how important it is to set 
+           the SEO and brand-building foundation with amazing 
+           content marketing......</p>
+       <!--<a href="https://www.singlegrain.com/" class="btn"> read more</a>-->
+       <a href="#" class="btn"> read more</a>
+    </div>
+
+              </div>
+              <div class="card">
+                  <div class="card-header">
+              <h2>Lego</h2>
+              <img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;">
+                  </div>
+                  <div class="card-body">
+       <p>Lego’s product makes it easy for them to create awe-inspiring campaigns, 
+           and they certainly take advantage of it! In September of 2019 ......</p>
+       <!--<a href="https://www.lego.com/en-us" class="btn">read more</a>--> 
+       <a href="#" class="btn">read more</a>     
+                  </div>
+
+              </div>
+
+              <div class="card">
+                  <div class="card-header">
+              <h2>Airbnb</h2>
+              <img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;">
+                  </div>
+                  <div class="card-body">
+      <p> Airbnb has changed the way we travel and look for 
+          accommodations. Launched when its founders couldn’t 
+          afford their own rent, the site now boasts over.....</p>
+       <!--<a href="https://www.airbnb.com/" class="btn">read more</a>-->
+       <a href="#" class="btn">read more</a> 
+                  </div>
+              </div>
+
+              <div class="card">
+                  <div class="card-header">
+              <h2>Consulting</h2>
+              <img src="images/profile1.jpg" class="w3-round" alt="Norway" height="200px" width="250px;">
+                  </div>
+                  <div class="card-body">
+       <p>Consulting is a coaching business for people who are getting their consultancy off the ground....</p>
+       <!--<a href="https://www.consulting.com/" class="btn">read more</a>-->
+       <a href="#" class="btn">read more</a>  
+                  </div>
+                </div>
           </div>
 
       </div>
-    
 
      
     <div class="footer">
@@ -195,28 +247,7 @@
 
   firebase.analytics();
 </script>
-<script src="js/auth3.js"></script>
-<script>
-    var content=document.querySelector('#content');
-    db.collection('a_insert').get().then((snapshot) => {
-
-snapshot.docs.forEach(doc => {
-content.innerHTML+=`<div class="card">
-                  <div class="card-header" style="color: white;background-color: #34495e;">
-                  <h2>${doc.data().art_title}
-                </h2>
-                  <img src="images/profile1.jpg"  height="200px" width="250px;">
-                  </div>
-                  <div class="card-body">
-      <p>${doc.data().article.substr(0,75)} ...</p>
-       <a href="blog_open.html#${doc.id}" class="btn">readmore</a>
-    </div>
-
-              </div>`;
-})
-
-})
-</script>
+<script src="auth3.js"></script>
     </div>
     </body>
-    </html>
+    </html

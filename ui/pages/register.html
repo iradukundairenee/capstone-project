@@ -48,20 +48,16 @@
        
              
         <div class="register"></br></br></br>
-            <div class="regititle" style="color: white; margin-left: 100px; font-size: 25px;">login HERE</div></br></br></br>
+            <div class="regititle" style="color: white; margin-left: 100px; font-size: 25px;">register here</div></br></br></br>
             
             <form  id="signup-form">
        <input type="text" id="signup-email" class="input" name="name" placeholder="Enter username" required>
 
        <input type="password" id="signup-password" class="input" password="password" placeholder="Enter password" required>
 
-       <div id="error_msg"> incorrect username or password please try again </div>
-
+       <div id="error_msg"></div>
        <input type="submit" name="submit" id="login_btn"  value="Login" >
-       
        </form>
-       <p style="color: white; margin-left: 30%;">don't you already have an account?</p>
-       <a href="register.html" style="color: white; margin-left: 30%;">  register here</a>
         </div>
         <div class="footer">
             &nbsp;
@@ -69,9 +65,9 @@
             &nbsp;
            <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
            <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>-->
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -80,22 +76,24 @@
 
 <script>
   // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
-    authDomain: "capstone-project-c3976.firebaseapp.com",
-    databaseURL: "https://capstone-project-c3976.firebaseio.com",
-    projectId: "capstone-project-c3976",
-    storageBucket: "capstone-project-c3976.appspot.com",
-    messagingSenderId: "59674241183",
-    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
-    measurementId: "G-BY2DBWKZV3"
-  };
+
+  //var firebaseConfig = {
+  //  apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
+   // authDomain: "capstone-project-c3976.firebaseapp.com",
+   // databaseURL: "https://capstone-project-c3976.firebaseio.com",
+   // projectId: "capstone-project-c3976",
+   // storageBucket: "capstone-project-c3976.appspot.com",
+   // messagingSenderId: "59674241183",
+   // appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
+   // measurementId: "G-BY2DBWKZV3"
+ // };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
   const db=firebase.firestore();
 
   firebase.analytics();
+
 </script>
 <script src="js/auth1.js"></script>
         </div>

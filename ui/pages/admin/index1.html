@@ -8,70 +8,213 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
     <style>
-
-    </style>
-    
+            
+      .backend{
+          color: white;
+          font-size: 30px;
+          margin-left: 550px;
+          margin-top: 100px;
+      
+      }
+      .lorem{
+      margin-left: 450px;
+      color: white; 
+      margin-top: 50px;
+      font-weight: bold; 
+      font-size: 15px;
+      }
+      .talk{
+          background-color: black;
+          color: white;
+          margin-top: 35px; 
+          margin-left:600px;
+          height:20px;
+          width:60px;
+          border-radius: 10%;
+          font-weight: bold;
+          font-size: 15px;
+      }
+      .talk:hover{
+      
+          background-color: #11bb99;
+          color:blue;
+          transition: .5s;
+          cursor: pointer;
+      
+      }
+      
+      .service{
+          font-size: 30px;
+          color:white;
+          margin-left:570px;
+          margin-top: 35px;
+      }
+      .row{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-around;
+                  flex-flow: wrap;
+              }
+              .card{
+                  width:20%;
+                  background-color: #fff;
+                  border: 1px solid #ccc;
+                  margin-bottom: 50px;
+                  transition: 0.3s;
+              }
+             
+              .card-body{
+                  padding:30px 20px;
+                  text-align: center;
+                  font-size: 18px;
+              }
+              .card-body .btn{
+                  display: block;
+                  color:#fff;
+                  text-align: center;
+                  background: linear-gradient(to right,#ff416c,#ff4b2c);
+                  margin-top: 30px;
+                  text-decoration: none;
+                  padding: 7px 5px;
+      
+              }
+              .card:hover{
+                  transform: scale(1.05);
+                  box-shadow:0 0 40px -10px rgba(0, 0,0, 0.25);
+              }
+              .fa-facebook {
+        background: white;
+        color:blue;
+      }
+      .fa {
+        padding: 20px;
+        font-size: 15px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+      }
+      
+      .fa:hover {
+          opacity: 0.7;
+      }
+      
+      .fa-facebook {
+        background: #3B5998;
+        color: white;
+      }
+      
+      .fa-twitter {
+        background: #55ACEE;
+        color: white;
+      }
+      .fa-linkedin {
+        background: #007bb5;
+        color: white;
+      }
+      .fa-instagram {
+        background: #125688;
+        color: white;
+      }
+      
+      @media screen and (max-width:620px){
+          .backend{
+          color: white;
+          font-size: 27px;
+          margin-left: 140px;
+          margin-top: 50px;
+      
+      }
+      
+      .lorem{
+      margin-left: 140px;
+      color: white; 
+      margin-top: 50px;
+      font-weight: bold; 
+      font-size: 15px;
+      }
+      .talk{
+          background-color: black;
+          color: white;
+          margin-top: 35px; 
+          margin-left: 190px;
+          height:20px;
+          width:70px;
+          border-radius: 10%;
+          font-weight: bold;
+          font-size: 15px;
+      }
+      .service{
+          font-size: 30px;
+          color:white;
+          margin-left: 140px;
+          margin-top: 35px;
+      }
+          .container{
+      
+           width:100%;
+           
+                  }
+                  .card{
+                      width:80%;
+                  }   
+              }
+              </style>
         <nav>
-            <input type="checkbox" id="check">
-            <label for="check">
-                <i class="fas fa-bars" id="btn"></i>
-                <i class="fas fa-times" id="cancel"></i>
-            </label>
-            <img src="images/logo.png">
-            <body>   
-   <ul>
-    <li><a href="../../index.html">home</a></li>
-    <li><a href="contact1.html">contact</a></li>
-    <li><a href="blog2.html">blog</a></li>
-    <li><a href="profile1.html">about</a></li>
-    <li><a href="signin.html">logout</a></li>
+          <input type="checkbox" id="check">
+          <label for="check">
+              <i class="fas fa-bars" id="btn"></i>
+              <i class="fas fa-times" id="cancel"></i>
+          </label>
+          <img src="images/logo.png">
+          <body>   
+ <ul>
+  <li><a href="index1.html">home</a></li>
+  <li><a href="contact1.html">contact</a></li>
+  <li><a href="blog2.html">blog</a></li>
+  <li><a href="profile1.html">about</a></li>
+  <li><a href="logout.html">logout</a></li>
 </ul>
-        </nav>
+      </nav>
         <h2>Dashboard</h2>
         <center>
-
-            <div style="height: 450px; width: 500px; margin-top:10px; background-color: " id="container">
+            <!--<div style="height: 450px; width: 500px; margin-top:10px;" id="container">
              <h2>number of user:10; </h2>
               &nbsp; &nbsp;
-             <h2>number of message:6; </h2>
+             <h2> message:6; </h2>
              &nbsp; &nbsp;
-             <h2>number of article:8; </h2>
-            </div>
+             <h2>blogs:8; </h2>
+            </div>-->
+            <div class="row">
+              <div class="card" style="height: 300px;">
+                  <div class="card-body"> 
+                    <h2>users:10 </h2>   
+                  </div>
+              </div>
+              <div class="card" style="height: 300px;">
+                  <div class="card-body">
+                    <h2> Messages:6 </h2>
+                  </div>
+  
+              </div>
+  
+              <div class="card" style="height: 300px;">
+                  <div class="card-body">
+                    <h2>Blog:8 </h2>
+                  </div>
+  
+              </div>
+          </div>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
           </center>
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
-
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
-    authDomain: "capstone-project-c3976.firebaseapp.com",
-    databaseURL: "https://capstone-project-c3976.firebaseio.com",
-    projectId: "capstone-project-c3976",
-    storageBucket: "capstone-project-c3976.appspot.com",
-    messagingSenderId: "59674241183",
-    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
-    measurementId: "G-BY2DBWKZV3"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  const db=firebase.firestore();
-
-  firebase.analytics();
-</script>
-<script>
-   
-</script>
-
-
         <div class="footer">
             &nbsp;
             &nbsp;

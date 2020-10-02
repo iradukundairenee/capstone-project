@@ -2,7 +2,6 @@
     <head>
         <title>responsive design</title>
         <link type="text/css" rel="stylesheet" href="css/style1.css">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
     <style>
 
@@ -27,43 +26,20 @@
             <div class="register" style="height: 500px;">
                 <h3 style="color: white; margin-left: 30%; font-size:28px;">Contact Here</h3>
                 <form id="form">
-           <input type="text"  id="fullnames"  placeholder="Enter fullnames">
-           <input type="email" id="email" placeholder="Enter email">
-           <input type="text" id="message" style="height: 100px;">
-           <input type="submit" name="submit" value="submit" style="background-color: blue; color:white; border-radius: 10px;">
+           <input type="text"  id="fullnames"  placeholder="Enter fullnames" required="">
+           <input type="email" id="email" placeholder="me@example.com" required>
+           <input type="text" id="message" style="height: 100px;" placeholder="Enter message" required="">
+           
+           <input type="submit" name="submit" value="submit" onclick="send()" style="background-color: blue; color:white; border-radius: 10px;">
         </form>
             </div>
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+        <script>
+            function send()
+            {
+            document.getElementById('send').innerHTML="message sent";
+            }
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
-
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
-    authDomain: "capstone-project-c3976.firebaseapp.com",
-    databaseURL: "https://capstone-project-c3976.firebaseio.com",
-    projectId: "capstone-project-c3976",
-    storageBucket: "capstone-project-c3976.appspot.com",
-    messagingSenderId: "59674241183",
-    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
-    measurementId: "G-BY2DBWKZV3"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  const db=firebase.firestore();
-  const auth=firebase.auth();
-
-  firebase.analytics();
-</script>
-<script src="js/auth2.js"></script>
+        </script>
         <div class="footer">
             &nbsp;
             &nbsp;

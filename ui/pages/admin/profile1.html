@@ -2,12 +2,124 @@
     <head>
         <title>responsive design</title>
         <link type="text/css" rel="stylesheet" href="css/style1.css">
-        <script>
-            
-        </script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
     <style>
+        .flex-profile{
+    display: flex;
+    flex-wrap:nowrap;
+
+}
+.flex-profile > div{
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    text-align: center;
+    margin-left: 250px;
+}
+.flex-profile h2,.flex-profile span{
+    color: white;
+}
+.flex-profile pan{
+    color:white;
+    font-size:20px ;
+}
+.flex-profile > p{
+    text-align: center;
+    margin-left: 250px;
+    color:white;
+
+}
+.row{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          flex-flow: wrap;
+      }
+      .card{
+          width:30%;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          margin-bottom: 50px;
+          transition: 0.3s;
+      }
+      .card-header{
+          color: white;
+          background-color: #34495e;
+          text-align: center;
+          padding: 30px 10px;
+      }
+      .card-body{
+          padding:30px 20px;
+          text-align: center;
+          font-size: 18px;
+      }
+
+.skills{
+    height: 400px;
+    clear:both;
+}
+.flex-skills{
+    display: flex;
+    flex-wrap:nowrap;
+
+}
+.flex-skills > div{
+    width: 800px;
+    height: 250px;
+    margin: 10px;
+    text-align: center;
+    margin-left: 250px;
+    margin-top:100px;
+}
+.card-body{
+    color:white;
+}
+.skills2{
+    color:white;
+     margin-top: 70px;
+      margin-left: 10%;
+      font-size:15px;
+}
+.skillstitle{
+     color: white;
+     margin-left: 270px; 
+     font-size:25px;
+}
+ 
+@media screen and (max-width:1000px){
+          .card{
+              width:40%;
+          }       
+      }
+      @media screen and (max-width:620px){
+          .container{
+              width:100%;
+          }
+          .heading{
+              padding:20px;
+              font-size:20px;
+          }
+          .card{
+              width:70%;
+          } 
+          .card-body{
+    color:white;
+}
+.skills2{
+    color:white;
+     margin-top: 70px;
+      margin-left: 5%;
+      font-size:15px;
+
+}
+.skillstitle{
+     color: white;
+     margin-left: 170px; 
+     font-size:25px;
+}
+
+}
 
     </style>
     
@@ -24,61 +136,89 @@
     <li><a href="contact1.html">contact</a></li>
     <li><a href="blog2.html">blog</a></li>
     <li><a href="profile1.html">about</a></li>
-    <li><a href="signin.html">logout</a></li>
+    <li><a href="logout.html">logout</a></li>
 </ul>
         </nav>
-        <center>
-            <div style="height: 450px; width: 500px; margin-top:10px; background-color: " id="container">
-              <img src="images/profile.jpg" class="w3-round" alt="Norway" height="300px" width="350px;" style="border-radius: 10px;"></br>
-              <input type="file">   
-              <button>upload new foto</button>
-              <h2>profile details</h2>
-              <div style="height: 400px; width:300px;">
-              <input type="text" placeholder="iradukunda irenee"></br></br>
-              <input type="text" placeholder= "owner description will be here"></br></br>
-              <input type="submit" name="submit"> 
+        
+        <div class="row">
+            <div>
+                <img src="images/profile.jpg" class="w3-round" alt="Norway" height="280px" width="350px;" style="border-radius: 10px;">
+                
+                <div class="card-body">
+                    <pan>IRADUKUNDA Irenee</pan>
+                </div>
+                <center><button style="background-color:aqua;width:100px;">edit</button></center>
+
             </div>
+            <div>
+                
+                <div class="card-body" >
+                
+            MY NAME IS IRADUKUNDA IRENEE</br></br>
+
+            FREELANCE SOFTWARE ENGINEER</br></br>
+ 
+            IF YOU WANT ME TO DEVELOP SOFTWARE </br></br>
+            FOR YOU FEEL FREE TO CALL</br></br>
+ 
+            0787486966/0724028976</br></br>
+ 
+            EMAIL:iradukundairenee9@gmail.com</br></br>
+                </div>
+
             </div>
-          </center>
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
-
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDHDAO89EOXAAad_QvSAZzrgqk2jzjQ5YE",
-    authDomain: "capstone-project-c3976.firebaseapp.com",
-    databaseURL: "https://capstone-project-c3976.firebaseio.com",
-    projectId: "capstone-project-c3976",
-    storageBucket: "capstone-project-c3976.appspot.com",
-    messagingSenderId: "59674241183",
-    appId: "1:59674241183:web:9067bf8e2b80c9388cdaaa",
-    measurementId: "G-BY2DBWKZV3"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  const db=firebase.firestore();
-
-  firebase.analytics();
-</script>
-<script>
-   
-</script>
-
-
-        <div class="footer">
-            &nbsp;
-            &nbsp;
-            &nbsp;
-           <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
         </div>
-        </body>
-        </html>
+        <div class="skills">
+           <h2 class="skillstitle" style="margin-left: 40%;"> - My Skills - </h2>
+            <div class="skills2" style="margin-left: 30%; font-size: 20px;" >
+              I have strong collaboration skills and proven history of application development 
+            </div>
+            <div class="row">
+                <div>
+                    <div style="font-size:30px; color:white;">
+                        PHP & MYSQL
+                    </div></br>
+                   <div style="background-color: white;height:15px; width:250px; border-radius: 50px; border: saddlebrown;">
+                    <div style="background-color:gray; height:15px; width:150px; border-radius: 50px;">
+                        
+                    </div>
+                   </div>
+                   <div style="font-size:30px; color:white;">
+                    JAVASCRIPT
+                   </div>&nbsp;&nbsp;
+                   <div style="background-color: white;height:15px; width:250px; border-radius: 50px;">
+                    <div style="background-color:gray; height:15px; width:150px; border-radius: 50px;">
+                        
+                    </div>
+                   </div>
+                  
+    
+                  </div>
+                  <div>
+                    <div  style="font-size:30px;color: white;">
+                      HTML5
+                    </div>&nbsp;&nbsp;
+                    <div style="background-color: white;height:15px; width:250px; border-radius: 50px;">
+                      <div style="background-color:gray; height:15px; width:150px; border-radius: 50px;">
+                          
+                      </div>
+                     </div>
+                  <div  style="font-size:30px; color:white;">
+                  NODE.JS
+                  </div>&nbsp;&nbsp;
+                  <div style="background-color: white;height:15px; width:250px; border-radius: 50px;">
+                      <div style="background-color:gray; height:15px; width:150px; border-radius: 50px;">
+                          
+                      </div>
+                     </div>
+              </div>
+             
+                </div>
+    <div class="footer">
+        &nbsp;
+        &nbsp;
+        &nbsp;
+       <center style="margin-top: 50px;">&copy copyright 2020 IRADUKUNDA Irenee</center>
+    </div>
+    </body>
+    </html
